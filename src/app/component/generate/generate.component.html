@@ -11,12 +11,19 @@
         Find the perfect Korean name for your baby, character, or nickname with
         our easy-to-use Korean name generator
       </div>
+      <div
+        *ngIf="!showGenerateForm"
+        class="align-items-center justify-content-center flex flex-wrap p-3"
+      >
+        <app-generate-form></app-generate-form>
+      </div>
       <button
         pButton
         pRipple
         label="Generate a Korean Name"
         icon="pi pi-plus"
         class="font-bold px-5 py-3 p-button-raised p-button-rounded white-space-nowrap"
+        (click)="toggleGenerate()"
       ></button>
     </div>
   </div>
