@@ -1,9 +1,12 @@
 export interface KoreanName {
-  id?: number;
-  Syllable?: number;
-  FirstName: string;
-  R_FirstName: string;
-  RatioMasculineFeminine: number;
-  LastName: string;
-  R_LastName: string;
+  firstName: {
+    Syllable?: number;
+    FirstName: string;
+    'Masculine:Feminine': number;
+    R_FirstName: string;
+  };
+  lastName: {
+    LastName: string;
+    R_LastName: string;
+  };
 }

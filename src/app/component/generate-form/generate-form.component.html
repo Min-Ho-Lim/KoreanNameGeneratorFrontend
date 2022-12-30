@@ -46,10 +46,12 @@
     icon="pi pi-plus-circle"
     class="p-button-success"
     (click)="toggleModal()"
+    [loading]="isLoading"
   ></button>
 </div>
 
 <!-- pass showGeneratedModal to the modal component -->
 <app-generated-modal
   [showGeneratedModal]="showGeneratedModal"
+  [koreanName]="koreanName"
 ></app-generated-modal>
