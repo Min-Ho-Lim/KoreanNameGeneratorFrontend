@@ -45,5 +45,11 @@
     label="Create"
     icon="pi pi-plus-circle"
     class="p-button-success"
+    (click)="toggleModal()"
   ></button>
 </div>
+
+<!-- pass showGeneratedModal to the modal component -->
+<app-generated-modal
+  [showGeneratedModal]="showGeneratedModal"
+></app-generated-modal>

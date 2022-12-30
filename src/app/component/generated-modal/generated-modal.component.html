@@ -1,1 +1,14 @@
-<p>generated-modal works!</p>
+<p-dialog
+  header="🎉 Your New Random Korean Name !"
+  [modal]="true"
+  [(visible)]="showGeneratedModal"
+>
+  <div>
+    <img src="../../../assets/south-korea-flag.svg" class="h-10rem w-10rem" />
+    <h1>임시연 <i class="pi pi-copy"></i></h1>
+    <h2>Siyeon Im <i class="pi pi-copy"></i></h2>
+    <div class="flex gap-3 justify-content-evenly">
+      <button pButton label="Generate Again" icon="pi pi-replay"></button>
+    </div>
+  </div>
+</p-dialog>

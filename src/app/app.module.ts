@@ -10,6 +10,7 @@ import { InputSwitchModule } from 'primeng/inputswitch';
 import { DividerModule } from 'primeng/divider';
 import { SliderModule } from 'primeng/slider';
 import { AnimateModule } from 'primeng/animate';
+import { DialogModule } from 'primeng/dialog';
 
 import { AppComponent } from './app.component';
 import { BannerComponent } from './component/banner/banner.component';
@@ -36,6 +37,7 @@ import { GeneratedModalComponent } from './component/generated-modal/generated-m
     DividerModule,
     SliderModule,
     AnimateModule,
+    DialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
