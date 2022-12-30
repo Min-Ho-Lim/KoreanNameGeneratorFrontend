@@ -1,20 +1,29 @@
-<div class="h-full">
-  <div class="surface-section px-4 py-8 md:px-6 lg:px-8">
-    <div class="text-700 text-center">
-      <div class="text-blue-600 font-bold mb-3">
-        💪 &nbsp;CREATED BY MIN HO LIM
+<div>
+  <div class="px-4 py-8 md:px-6 lg:px-8">
+    <div
+      pAnimate
+      enterClass="flipup"
+      class="text-700 text-center animation-duration-1000 animation-ease-out"
+    >
+      <div class="text-blue-500 font-bold mb-3">
+        <span class="bg-white p-2 border-round-xl">
+          💪 &nbsp;CREATED BY MIN HO LIM
+        </span>
       </div>
-      <div class="text-900 font-bold text-5xl mb-3">
+      <div class="text-900 font-bold text-7xl mb-3">
         Create your own Korean name
       </div>
-      <div class="text-700 text-2xl mb-5">
-        Find the perfect Korean name for your baby, character, or nickname with
+      <div class="text-900 text-2xl mb-5">
+        Find the perfect Korean name for your baby, character, or nickname
+        <br />
         our easy-to-use Korean name generator
       </div>
       <div
-        *ngIf="!showGenerateForm"
-        class="align-items-center justify-content-center flex flex-wrap p-3"
+        @openClose
+        *ngIf="showGenerateForm"
+        class="align-items-center justify-content-center flex"
       >
+        <!-- [@openClose]="!showGenerateForm ? 'closed' : 'open'" -->
         <app-generate-form></app-generate-form>
       </div>
       <button
@@ -22,7 +31,7 @@
         pRipple
         label="Generate a Korean Name"
         icon="pi pi-plus"
-        class="font-bold px-5 py-3 p-button-raised p-button-rounded white-space-nowrap"
+        class="font-bold px-5 py-3 p-button-raised p-button-rounded white-space-nowrap mt-3"
         (click)="toggleGenerate()"
       ></button>
     </div>

@@ -1,11 +1,49 @@
-<div class="flex surface-card p-4 shadow-2 border-round w-full">
+<div class="flex-col surface-card p-4 shadow-2 border-round w-full">
   <div class="text-center mb-5">
-    <div class="text-900 text-3xl font-medium mb-3">Welcome Back</div>
-    <span class="text-600 font-medium line-height-3"
-      >Don't have an account?</span
-    >
-    <a class="font-medium no-underline ml-2 text-blue-500 cursor-pointer"
-      >Create today!</a
-    >
+    <div class="text-900 text-3xl font-medium">Select Your Settings</div>
   </div>
+  <p-divider></p-divider>
+  <h3>Name</h3>
+  <div class="flex flex-col gap-3">
+    <div>
+      <label for="isMasculline" class="block text-900 font-medium mb-2"
+        >👦 Masculline</label
+      >
+      <p-inputSwitch
+        id="isMasculline"
+        [(ngModel)]="isMasculline"
+      ></p-inputSwitch>
+    </div>
+    <div>
+      <label for="isFeminine" class="block text-900 font-medium mb-2"
+        >👧 Feminine</label
+      >
+      <p-inputSwitch id="isFeminine" [(ngModel)]="isFeminine"></p-inputSwitch>
+    </div>
+    <div>
+      <label for="isFeminine" class="block text-900 font-medium mb-2"
+        >🧑 Neuter</label
+      >
+      <p-inputSwitch id="isNeuter" [(ngModel)]="isNeuter"></p-inputSwitch>
+    </div>
+  </div>
+  <div>
+    <label for="isFeminine" class="block text-900 font-medium mb-2"
+      >Coverage {{ rangeValues[0] }} to {{ rangeValues[1] }}</label
+    >
+    <div class="flex flex-col justify-content-between mb-3">
+      <div class="text-900 font-medium">👧 1.0</div>
+      <div class="text-900 font-medium">🧑 0.0</div>
+      <div class="text-900 font-medium">👦 -1.0</div>
+    </div>
+    <p-slider [(ngModel)]="rangeValues" [range]="true"></p-slider>
+  </div>
+
+  <p-divider></p-divider>
+  <button
+    pButton
+    label="Create"
+    icon="pi pi-plus-circle"
+    class="p-button-success"
+  ></button>
 </div>

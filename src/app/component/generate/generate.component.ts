@@ -1,3 +1,10 @@
+import {
+  trigger,
+  state,
+  style,
+  transition,
+  animate,
+} from '@angular/animations';
 import { Component } from '@angular/core';
 import { Subscription } from 'rxjs';
 
@@ -6,6 +13,17 @@ import { UiService } from '../../services/ui.service';
 @Component({
   selector: 'app-generate',
   templateUrl: './generate.component.html',
+  animations: [
+    trigger('openClose', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('500ms', style({ opacity: 1, height: '100%' })),
+      ]),
+      transition(':leave', [
+        animate('300ms', style({ opacity: 0, height: '0%' })),
+      ]),
+    ]),
+  ],
   styleUrls: ['./generate.component.scss'],
 })
 export class GenerateComponent {
