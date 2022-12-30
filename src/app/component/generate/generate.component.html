@@ -29,8 +29,8 @@
       <button
         pButton
         pRipple
-        label="Generate a Korean Name"
-        icon="pi pi-plus"
+        [label]="showGenerateForm ? 'Collapse' : 'Generate Name'"
+        [icon]="showGenerateForm ? 'pi pi-minus' : 'pi pi-plus'"
         class="font-bold px-5 py-3 p-button-raised p-button-rounded white-space-nowrap mt-3"
         (click)="toggleGenerate()"
       ></button>

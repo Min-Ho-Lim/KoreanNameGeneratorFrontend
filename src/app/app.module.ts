@@ -12,12 +12,14 @@ import { DividerModule } from 'primeng/divider';
 import { SliderModule } from 'primeng/slider';
 import { AnimateModule } from 'primeng/animate';
 import { DialogModule } from 'primeng/dialog';
+import { TooltipModule } from 'primeng/tooltip';
 
 import { AppComponent } from './app.component';
 import { BannerComponent } from './component/banner/banner.component';
 import { GenerateComponent } from './component/generate/generate.component';
 import { GenerateFormComponent } from './component/generate-form/generate-form.component';
 import { GeneratedModalComponent } from './component/generated-modal/generated-modal.component';
+import { GenerateFormSliderComponent } from './component/generate-form-slider/generate-form-slider.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import { GeneratedModalComponent } from './component/generated-modal/generated-m
     GenerateComponent,
     GenerateFormComponent,
     GeneratedModalComponent,
+    GenerateFormSliderComponent,
   ],
   imports: [
     HttpClientModule,
@@ -40,6 +43,7 @@ import { GeneratedModalComponent } from './component/generated-modal/generated-m
     SliderModule,
     AnimateModule,
     DialogModule,
+    TooltipModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

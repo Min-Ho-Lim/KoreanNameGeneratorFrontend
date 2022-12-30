@@ -44,7 +44,6 @@ export class GenerateComponent {
   }
 
   toggleGenerate() {
-    console.log('toggleGenerate from comp', this.showGenerateForm);
     this.uiService.toggleGenerate();
   }
 }

@@ -15,6 +15,7 @@ export class GenerateFormComponent {
   isNeuter: boolean = true;
   rangeValues: number[] = [0, 100];
   isLoading: boolean = false;
+  isError: boolean = false;
 
   koreanName: KoreanName = {} as KoreanName;
 
@@ -38,15 +39,24 @@ export class GenerateFormComponent {
   }
   toggleModal() {
     this.isLoading = true;
-    // if  this.getRandomKoreanName() is done, then toggleModal
-    this.getRandomKoreanName();
+    this.isError = false;
+    // give 300ms to show loading animation
+    setTimeout(() => {
+      this.getRandomKoreanName();
+    }, 300);
   }
 
   getRandomKoreanName() {
-    this.koreanameService.getRandomKoreanName().subscribe((koreanName) => {
-      this.koreanName = koreanName;
-      this.isLoading = false;
-      this.uiService.toggleModal();
-    });
+    this.koreanameService.getRandomKoreanName().subscribe(
+      (koreanName) => {
+        this.koreanName = koreanName;
+        this.isLoading = false;
+        this.uiService.toggleModal();
+      },
+      (error) => {
+        this.isError = true;
+        this.isLoading = false;
+      }
+    );
   }
 }

@@ -2,6 +2,7 @@
   header="🎉 Your New Random Korean Name !"
   [modal]="true"
   [(visible)]="showGeneratedModal"
+  (onHide)="onClose()"
 >
   <div>
     <img src="../../../assets/south-korea-flag.svg" class="h-10rem w-10rem" />
@@ -16,6 +17,7 @@
         label="Generate Again"
         icon="pi pi-replay"
         (click)="getRandomKoreanName()"
+        [loading]="isLoading"
       ></button>
     </div>
   </div>
