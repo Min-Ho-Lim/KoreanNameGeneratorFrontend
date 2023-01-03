@@ -25,21 +25,27 @@ export class GeneratedModalComponent {
   }
 
   getKoreanFullName() {
-    if (this.koreanName?.firstName && this.koreanName?.lastName) {
-      // make first letter of last name uppercase
+    if (!this.koreanName.firstName || !this.koreanName.lastName) return '';
 
-      return `${this.koreanName.lastName.LastName}${this.koreanName.firstName.FirstName}`;
-    }
-    return '';
+    const { firstName, lastName } = this.koreanName;
+
+    const firstNameObj = firstName[0];
+    const lastNameObj = lastName[0];
+
+    return `${lastNameObj.LastName}${firstNameObj.FirstName}`;
   }
 
   getRomanizedFullName() {
-    if (this.koreanName?.firstName && this.koreanName?.lastName) {
-      return `${this.titleCase(
-        this.koreanName.firstName.R_FirstName
-      )} ${this.titleCase(this.koreanName.lastName.R_LastName)}`;
-    }
-    return '';
+    if (!this.koreanName.firstName || !this.koreanName.lastName) return '';
+
+    const { firstName, lastName } = this.koreanName;
+    console.log(firstName, lastName);
+    const firstNameObj = firstName[0];
+    const lastNameObj = lastName[0];
+
+    return `${this.titleCase(firstNameObj.R_FirstName)} ${this.titleCase(
+      lastNameObj.R_LastName
+    )}`;
   }
 
   getRandomKoreanName() {
