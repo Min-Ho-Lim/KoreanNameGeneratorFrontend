@@ -39,7 +39,6 @@ export class GeneratedModalComponent {
     if (!this.koreanName.firstName || !this.koreanName.lastName) return '';
 
     const { firstName, lastName } = this.koreanName;
-    console.log(firstName, lastName);
     const firstNameObj = firstName[0];
     const lastNameObj = lastName[0];
 

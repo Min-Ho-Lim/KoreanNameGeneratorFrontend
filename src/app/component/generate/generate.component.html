@@ -10,11 +10,15 @@
           💪 &nbsp;CREATED BY MIN HO LIM
         </span>
       </div>
-      <div class="text-900 font-bold text-7xl mb-3">
+      <div class="text-900 font-bold text-2xl md:text-7xl mb-3">
         Create your own Korean name
       </div>
-      <div class="text-900 text-2xl mb-5">
-        Find the perfect Korean name for your baby, character, or nickname
+      <div
+        class="text-900 text-md md:text-2xl md:mb-5 mb-2"
+        *ngIf="!showGenerateForm"
+      >
+        📣 Find the perfect Korean name for your 👶baby, 📔character, or
+        🤓nickname
         <br />
         our easy-to-use Korean name generator
       </div>
